@@ -1,0 +1,16 @@
+{% if is_paginated %}
+    {% load url_replace %}
+    <div class="pagination">
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+                <a href="?{% url_replace page=page_obj.previous_page_number %}">anterior</a>
+            {% endif %}
+            <span class="page-current">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+            </span>
+            {% if page_obj.has_next %}
+                <a href="?{% url_replace page=page_obj.next_page_number %}">siguiente</a>
+            {% endif %}
+        </span>
+    </div>
+{% endif %}

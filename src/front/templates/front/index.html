@@ -1,0 +1,12 @@
+<form action="" method="get">
+    {{ filter.form.as_p }}
+    <input type="submit" />
+</form>
+
+<ul>
+    {% for persona in personas %}
+        <li><a href="{% url 'detail' pk=persona.pk %}">{{ persona.nombre }}</a></li>
+    {% endfor %}
+</ul>
+
+{% include 'front/_partials/_pagination.html' %}

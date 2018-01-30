@@ -1,0 +1,7 @@
+<h1>{{ persona.nombre }}</h1>
+
+<ul>
+    {% for mascota in persona.mascotas.all %}
+        <li>{{ mascota.nombre }}</li>
+    {% endfor %}
+</ul>
